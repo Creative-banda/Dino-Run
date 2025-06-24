@@ -13,7 +13,7 @@ pygame.init()
 # Set up display
 WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Dino Run")
+pygame.display.set_caption("Pygame Basics")
 
 is_music_playing = False
 
