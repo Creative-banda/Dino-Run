@@ -3,7 +3,7 @@
 # Try this task:
 # 1. Take away the last number (the 5) from the end of the `pygame.draw.rect`, `pygame.draw.circle` and `pygame.draw.line` lines.
 # - Watch what happens to the shapes on the screen!
-# - Check Line 30, 31, 32
+# - Check Line 34, 35, 36
 
 # 2. Create new shapes using the `pygame.draw.rect`, `pygame.draw.circle` and `pygame.draw.line` functions.
 # - Use different colors, positions, and sizes.
