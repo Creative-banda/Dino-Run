@@ -1,0 +1,18 @@
+# Dino Run RL -- dependencies for headless training, evaluation and playback.
+#
+# Local install (or inside the bundle):
+#     python -m pip install -r requirements.txt
+#
+# Google Colab: torch is already installed as a CUDA build there, so this file is a
+# no-op for it as long as the pins below stay satisfied.  Do NOT install a CPU-only
+# torch on Colab -- the policy network should run on the GPU when one is available.
+#
+# Versions are the ones the system was built and verified with; the lower bounds are
+# what the code actually needs.
+
+pygame>=2.5.0,<3.0            # the existing game (sprites, sound, rendering) -- also used headless
+gymnasium>=1.0.0              # DinoRunEnv / spaces / check_env
+stable-baselines3>=2.3.0      # the PPO implementation (no custom PPO)
+numpy>=1.24                   # observations, vector env buffers
+psutil>=5.9                   # CPU/RAM used by the environment benchmark
+torch>=2.0                    # policy/value network; CUDA when available, CPU otherwise

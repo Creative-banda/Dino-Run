@@ -35,3 +35,20 @@ Dino Run is a side-scrolling endless runner game inspired by the Chrome browser'
 
    # Run game
    python main.py
+   ```
+
+## Reinforcement Learning (PPO)
+
+This repository also contains a complete reinforcement-learning system that teaches a PPO
+agent to play *this* game (the environment is a headless wrapper around the same
+simulation, so the game itself is unchanged). See **[README_RL.md](README_RL.md)** for the
+full documentation.
+
+```bash
+python -m pip install -r requirements.txt
+python training/smoke_test.py --timesteps 4096 --envs 4      # validate the pipeline
+python training/benchmark_envs.py                            # how many envs can this machine run?
+python training/train_ppo.py --timesteps 3000000 --envs auto --frame-skip 4
+python training/evaluate_ppo.py --model models/ppo_dino_v1 --episodes 20 --frame-skip 4
+python training/play_agent.py --model models/ppo_dino_v1     # watch the agent play
+```

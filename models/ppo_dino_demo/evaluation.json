@@ -1,0 +1,1161 @@
+{
+  "created": "2026-09-28 01:13:35",
+  "model": "models/ppo_dino_demo",
+  "settings": {
+    "episodes": 20,
+    "seed": 1234,
+    "deterministic": true,
+    "envs": 1,
+    "resolution": "800x600",
+    "frame_skip": 4,
+    "max_episode_steps": 6000
+  },
+  "results": [
+    {
+      "policy": "ppo",
+      "policy_info": {
+        "name": "ppo",
+        "deterministic": true,
+        "num_timesteps": 2499840
+      },
+      "episodes": 20,
+      "wall_seconds": 11.702962398529053,
+      "steps_per_second": 14892.895838228675,
+      "score_mean": 8714.55,
+      "score_std": 11216.606048511287,
+      "score_median": 534.0,
+      "score_best": 24000.0,
+      "score_worst": 382.0,
+      "frames_mean": 8714.55,
+      "survival_seconds_mean": 145.2425,
+      "survival_seconds_best": 400.0,
+      "survival_seconds_worst": 6.366666666666666,
+      "distance_mean": 116615.225,
+      "distance_total": 2332304.5,
+      "obstacles_mean": 77.1,
+      "birds_mean": 45.2,
+      "obstacles_total": 1542,
+      "collisions": 13,
+      "collision_rate": 0.65,
+      "truncations": 7,
+      "actions_total": 43576,
+      "action_distribution": {
+        "nothing": 0.042982375619607126,
+        "jump": 0.024095832568386266,
+        "down": 0.9329217918120066
+      },
+      "action_counts": {
+        "nothing": 1873,
+        "jump": 1050,
+        "down": 40653
+      },
+      "reward_mean": 2909.051250000031,
+      "reward_std": 3912.0347622151853,
+      "reward_best": 8240.25000000009,
+      "reward_worst": 28.19999999999993,
+      "best_episode": {
+        "env_id": 0,
+        "seed": 1234003703,
+        "frames": 24000,
+        "score": 24000,
+        "survival_seconds": 400.0,
+        "distance": 329590.5,
+        "reward": 8240.25000000009,
+        "steps": 6000,
+        "collision": false,
+        "game_speed_final": 23.5,
+        "obstacles_spawned": 205,
+        "birds_spawned": 132,
+        "actions": {
+          "nothing": 175,
+          "jump": 81,
+          "down": 5744
+        }
+      },
+      "worst_episode": {
+        "env_id": 0,
+        "seed": 1234003707,
+        "frames": 382,
+        "score": 382,
+        "survival_seconds": 6.366666666666666,
+        "distance": 1528.0,
+        "reward": 28.19999999999993,
+        "steps": 96,
+        "collision": true,
+        "game_speed_final": 4.0,
+        "obstacles_spawned": 4,
+        "birds_spawned": 0,
+        "actions": {
+          "nothing": 60,
+          "jump": 31,
+          "down": 5
+        }
+      },
+      "episodes_detail": [
+        {
+          "seed": 1234003702,
+          "score": 473,
+          "survival_seconds": 7.883333333333334,
+          "distance": 1892.0,
+          "reward": 37.2999999999999,
+          "collision": true,
+          "obstacles_spawned": 5,
+          "birds_spawned": 1
+        },
+        {
+          "seed": 1234003703,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 205,
+          "birds_spawned": 132
+        },
+        {
+          "seed": 1234003704,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 195,
+          "birds_spawned": 138
+        },
+        {
+          "seed": 1234003705,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 225,
+          "birds_spawned": 114
+        },
+        {
+          "seed": 1234003706,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 204,
+          "birds_spawned": 133
+        },
+        {
+          "seed": 1234003707,
+          "score": 382,
+          "survival_seconds": 6.366666666666666,
+          "distance": 1528.0,
+          "reward": 28.19999999999993,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003708,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 209,
+          "birds_spawned": 127
+        },
+        {
+          "seed": 1234003709,
+          "score": 516,
+          "survival_seconds": 8.6,
+          "distance": 2064.0,
+          "reward": 41.59999999999988,
+          "collision": true,
+          "obstacles_spawned": 6,
+          "birds_spawned": 1
+        },
+        {
+          "seed": 1234003710,
+          "score": 398,
+          "survival_seconds": 6.633333333333334,
+          "distance": 1592.0,
+          "reward": 29.799999999999923,
+          "collision": true,
+          "obstacles_spawned": 6,
+          "birds_spawned": 1
+        },
+        {
+          "seed": 1234003711,
+          "score": 616,
+          "survival_seconds": 10.266666666666667,
+          "distance": 2471.0,
+          "reward": 51.77499999999986,
+          "collision": true,
+          "obstacles_spawned": 8,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003712,
+          "score": 386,
+          "survival_seconds": 6.433333333333334,
+          "distance": 1544.0,
+          "reward": 28.599999999999927,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003713,
+          "score": 583,
+          "survival_seconds": 9.716666666666667,
+          "distance": 2332.0,
+          "reward": 48.299999999999855,
+          "collision": true,
+          "obstacles_spawned": 8,
+          "birds_spawned": 1
+        },
+        {
+          "seed": 1234003714,
+          "score": 407,
+          "survival_seconds": 6.783333333333333,
+          "distance": 1628.0,
+          "reward": 30.69999999999992,
+          "collision": true,
+          "obstacles_spawned": 5,
+          "birds_spawned": 1
+        },
+        {
+          "seed": 1234003715,
+          "score": 500,
+          "survival_seconds": 8.333333333333334,
+          "distance": 2000.0,
+          "reward": 39.999999999999886,
+          "collision": true,
+          "obstacles_spawned": 6,
+          "birds_spawned": 1
+        },
+        {
+          "seed": 1234003716,
+          "score": 456,
+          "survival_seconds": 7.6,
+          "distance": 1824.0,
+          "reward": 35.5999999999999,
+          "collision": true,
+          "obstacles_spawned": 5,
+          "birds_spawned": 1
+        },
+        {
+          "seed": 1234003717,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 209,
+          "birds_spawned": 124
+        },
+        {
+          "seed": 1234003718,
+          "score": 528,
+          "survival_seconds": 8.8,
+          "distance": 2112.0,
+          "reward": 42.799999999999876,
+          "collision": true,
+          "obstacles_spawned": 8,
+          "birds_spawned": 1
+        },
+        {
+          "seed": 1234003719,
+          "score": 540,
+          "survival_seconds": 9.0,
+          "distance": 2160.0,
+          "reward": 43.99999999999987,
+          "collision": true,
+          "obstacles_spawned": 8,
+          "birds_spawned": 1
+        },
+        {
+          "seed": 1234003720,
+          "score": 506,
+          "survival_seconds": 8.433333333333334,
+          "distance": 2024.0,
+          "reward": 40.59999999999988,
+          "collision": true,
+          "obstacles_spawned": 6,
+          "birds_spawned": 2
+        },
+        {
+          "seed": 1234003721,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 216,
+          "birds_spawned": 125
+        }
+      ]
+    },
+    {
+      "policy": "random",
+      "policy_info": {
+        "name": "random"
+      },
+      "episodes": 20,
+      "wall_seconds": 0.04318714141845703,
+      "steps_per_second": 87410.27713370873,
+      "score_mean": 188.75,
+      "score_std": 18.721311385690907,
+      "score_median": 181.5,
+      "score_best": 267.0,
+      "score_worst": 180.0,
+      "frames_mean": 188.75,
+      "survival_seconds_mean": 3.145833333333333,
+      "survival_seconds_best": 4.45,
+      "survival_seconds_worst": 3.0,
+      "distance_mean": 755.0,
+      "distance_total": 15100.0,
+      "obstacles_mean": 3.35,
+      "birds_mean": 0.0,
+      "obstacles_total": 67,
+      "collisions": 20,
+      "collision_rate": 1.0,
+      "truncations": 0,
+      "actions_total": 953,
+      "action_distribution": {
+        "nothing": 0.33683105981112277,
+        "jump": 0.34942287513116477,
+        "down": 0.31374606505771246
+      },
+      "action_counts": {
+        "nothing": 321,
+        "jump": 333,
+        "down": 299
+      },
+      "reward_mean": 8.874999999999996,
+      "reward_std": 1.8721311385690842,
+      "reward_best": 16.69999999999997,
+      "reward_worst": 8.000000000000002,
+      "best_episode": {
+        "env_id": 0,
+        "seed": 1234003707,
+        "frames": 267,
+        "score": 267,
+        "survival_seconds": 4.45,
+        "distance": 1068.0,
+        "reward": 16.69999999999997,
+        "steps": 67,
+        "collision": true,
+        "game_speed_final": 4.0,
+        "obstacles_spawned": 4,
+        "birds_spawned": 0,
+        "actions": {
+          "nothing": 24,
+          "jump": 24,
+          "down": 19
+        }
+      },
+      "worst_episode": {
+        "env_id": 0,
+        "seed": 1234003703,
+        "frames": 180,
+        "score": 180,
+        "survival_seconds": 3.0,
+        "distance": 720.0,
+        "reward": 8.000000000000002,
+        "steps": 45,
+        "collision": true,
+        "game_speed_final": 4.0,
+        "obstacles_spawned": 3,
+        "birds_spawned": 0,
+        "actions": {
+          "nothing": 17,
+          "jump": 15,
+          "down": 13
+        }
+      },
+      "episodes_detail": [
+        {
+          "seed": 1234003702,
+          "score": 190,
+          "survival_seconds": 3.1666666666666665,
+          "distance": 760.0,
+          "reward": 8.999999999999996,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003703,
+          "score": 180,
+          "survival_seconds": 3.0,
+          "distance": 720.0,
+          "reward": 8.000000000000002,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003704,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003705,
+          "score": 191,
+          "survival_seconds": 3.183333333333333,
+          "distance": 764.0,
+          "reward": 9.099999999999998,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003706,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003707,
+          "score": 267,
+          "survival_seconds": 4.45,
+          "distance": 1068.0,
+          "reward": 16.69999999999997,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003708,
+          "score": 180,
+          "survival_seconds": 3.0,
+          "distance": 720.0,
+          "reward": 8.000000000000002,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003709,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003710,
+          "score": 195,
+          "survival_seconds": 3.25,
+          "distance": 780.0,
+          "reward": 9.499999999999996,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003711,
+          "score": 182,
+          "survival_seconds": 3.033333333333333,
+          "distance": 728.0,
+          "reward": 8.2,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003712,
+          "score": 184,
+          "survival_seconds": 3.066666666666667,
+          "distance": 736.0,
+          "reward": 8.4,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003713,
+          "score": 187,
+          "survival_seconds": 3.1166666666666667,
+          "distance": 748.0,
+          "reward": 8.7,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003714,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003715,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003716,
+          "score": 198,
+          "survival_seconds": 3.3,
+          "distance": 792.0,
+          "reward": 9.799999999999994,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003717,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003718,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003719,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003720,
+          "score": 191,
+          "survival_seconds": 3.183333333333333,
+          "distance": 764.0,
+          "reward": 9.099999999999998,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003721,
+          "score": 182,
+          "survival_seconds": 3.033333333333333,
+          "distance": 728.0,
+          "reward": 8.2,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        }
+      ]
+    },
+    {
+      "policy": "do_nothing",
+      "policy_info": {
+        "name": "do_nothing"
+      },
+      "episodes": 20,
+      "wall_seconds": 0.035164833068847656,
+      "steps_per_second": 102943.75613592601,
+      "score_mean": 181.0,
+      "score_std": 0.0,
+      "score_median": 181.0,
+      "score_best": 181.0,
+      "score_worst": 181.0,
+      "frames_mean": 181.0,
+      "survival_seconds_mean": 3.0166666666666666,
+      "survival_seconds_best": 3.0166666666666666,
+      "survival_seconds_worst": 3.0166666666666666,
+      "distance_mean": 724.0,
+      "distance_total": 14480.0,
+      "obstacles_mean": 3.3,
+      "birds_mean": 0.0,
+      "obstacles_total": 66,
+      "collisions": 20,
+      "collision_rate": 1.0,
+      "truncations": 0,
+      "actions_total": 920,
+      "action_distribution": {
+        "nothing": 1.0,
+        "jump": 0.0,
+        "down": 0.0
+      },
+      "action_counts": {
+        "nothing": 920,
+        "jump": 0,
+        "down": 0
+      },
+      "reward_mean": 8.099999999999998,
+      "reward_std": 1.7763568394002505e-15,
+      "reward_best": 8.1,
+      "reward_worst": 8.1,
+      "best_episode": {
+        "env_id": 0,
+        "seed": 1234003702,
+        "frames": 181,
+        "score": 181,
+        "survival_seconds": 3.0166666666666666,
+        "distance": 724.0,
+        "reward": 8.1,
+        "steps": 46,
+        "collision": true,
+        "game_speed_final": 4.0,
+        "obstacles_spawned": 3,
+        "birds_spawned": 0,
+        "actions": {
+          "nothing": 46,
+          "jump": 0,
+          "down": 0
+        }
+      },
+      "worst_episode": {
+        "env_id": 0,
+        "seed": 1234003702,
+        "frames": 181,
+        "score": 181,
+        "survival_seconds": 3.0166666666666666,
+        "distance": 724.0,
+        "reward": 8.1,
+        "steps": 46,
+        "collision": true,
+        "game_speed_final": 4.0,
+        "obstacles_spawned": 3,
+        "birds_spawned": 0,
+        "actions": {
+          "nothing": 46,
+          "jump": 0,
+          "down": 0
+        }
+      },
+      "episodes_detail": [
+        {
+          "seed": 1234003702,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003703,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003704,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003705,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003706,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003707,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003708,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003709,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003710,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003711,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003712,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003713,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003714,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003715,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003716,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003717,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003718,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003719,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003720,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        },
+        {
+          "seed": 1234003721,
+          "score": 181,
+          "survival_seconds": 3.0166666666666666,
+          "distance": 724.0,
+          "reward": 8.1,
+          "collision": true,
+          "obstacles_spawned": 3,
+          "birds_spawned": 0
+        }
+      ]
+    },
+    {
+      "policy": "geometric_heuristic",
+      "policy_info": {
+        "name": "geometric_heuristic"
+      },
+      "episodes": 20,
+      "wall_seconds": 2.3288822174072266,
+      "steps_per_second": 105892.4312087174,
+      "score_mean": 12330.55,
+      "score_std": 11669.777939082645,
+      "score_median": 12453.5,
+      "score_best": 24000.0,
+      "score_worst": 482.0,
+      "frames_mean": 12330.55,
+      "survival_seconds_mean": 205.50916666666666,
+      "survival_seconds_best": 400.0,
+      "survival_seconds_worst": 8.033333333333333,
+      "distance_mean": 166137.175,
+      "distance_total": 3322743.5,
+      "obstacles_mean": 102.95,
+      "birds_mean": 68.0,
+      "obstacles_total": 2059,
+      "collisions": 10,
+      "collision_rate": 0.5,
+      "truncations": 10,
+      "actions_total": 61657,
+      "action_distribution": {
+        "nothing": 0.8247725319104076,
+        "jump": 0.13062588189499977,
+        "down": 0.04460158619459267
+      },
+      "action_counts": {
+        "nothing": 50853,
+        "jump": 8054,
+        "down": 2750
+      },
+      "reward_mean": 4148.673125000044,
+      "reward_std": 4091.5882366205346,
+      "reward_best": 8240.25000000009,
+      "reward_worst": 38.19999999999989,
+      "best_episode": {
+        "env_id": 0,
+        "seed": 1234003702,
+        "frames": 24000,
+        "score": 24000,
+        "survival_seconds": 400.0,
+        "distance": 329590.5,
+        "reward": 8240.25000000009,
+        "steps": 6000,
+        "collision": false,
+        "game_speed_final": 23.5,
+        "obstacles_spawned": 183,
+        "birds_spawned": 142,
+        "actions": {
+          "nothing": 4942,
+          "jump": 708,
+          "down": 350
+        }
+      },
+      "worst_episode": {
+        "env_id": 0,
+        "seed": 1234003707,
+        "frames": 482,
+        "score": 482,
+        "survival_seconds": 8.033333333333333,
+        "distance": 1928.0,
+        "reward": 38.19999999999989,
+        "steps": 121,
+        "collision": true,
+        "game_speed_final": 4.0,
+        "obstacles_spawned": 5,
+        "birds_spawned": 1,
+        "actions": {
+          "nothing": 107,
+          "jump": 14,
+          "down": 0
+        }
+      },
+      "episodes_detail": [
+        {
+          "seed": 1234003702,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 183,
+          "birds_spawned": 142
+        },
+        {
+          "seed": 1234003703,
+          "score": 774,
+          "survival_seconds": 12.9,
+          "distance": 3182.0,
+          "reward": 69.54999999999997,
+          "collision": true,
+          "obstacles_spawned": 9,
+          "birds_spawned": 1
+        },
+        {
+          "seed": 1234003704,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 195,
+          "birds_spawned": 138
+        },
+        {
+          "seed": 1234003705,
+          "score": 598,
+          "survival_seconds": 9.966666666666667,
+          "distance": 2392.0,
+          "reward": 49.799999999999855,
+          "collision": true,
+          "obstacles_spawned": 4,
+          "birds_spawned": 2
+        },
+        {
+          "seed": 1234003706,
+          "score": 594,
+          "survival_seconds": 9.9,
+          "distance": 2376.0,
+          "reward": 49.39999999999985,
+          "collision": true,
+          "obstacles_spawned": 5,
+          "birds_spawned": 4
+        },
+        {
+          "seed": 1234003707,
+          "score": 482,
+          "survival_seconds": 8.033333333333333,
+          "distance": 1928.0,
+          "reward": 38.19999999999989,
+          "collision": true,
+          "obstacles_spawned": 5,
+          "birds_spawned": 1
+        },
+        {
+          "seed": 1234003708,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 209,
+          "birds_spawned": 127
+        },
+        {
+          "seed": 1234003709,
+          "score": 907,
+          "survival_seconds": 15.116666666666667,
+          "distance": 3780.5,
+          "reward": 84.51250000000006,
+          "collision": true,
+          "obstacles_spawned": 9,
+          "birds_spawned": 3
+        },
+        {
+          "seed": 1234003710,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 190,
+          "birds_spawned": 146
+        },
+        {
+          "seed": 1234003711,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 194,
+          "birds_spawned": 139
+        },
+        {
+          "seed": 1234003712,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 193,
+          "birds_spawned": 136
+        },
+        {
+          "seed": 1234003713,
+          "score": 583,
+          "survival_seconds": 9.716666666666667,
+          "distance": 2332.0,
+          "reward": 48.299999999999855,
+          "collision": true,
+          "obstacles_spawned": 8,
+          "birds_spawned": 1
+        },
+        {
+          "seed": 1234003714,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 213,
+          "birds_spawned": 118
+        },
+        {
+          "seed": 1234003715,
+          "score": 559,
+          "survival_seconds": 9.316666666666666,
+          "distance": 2236.0,
+          "reward": 45.899999999999864,
+          "collision": true,
+          "obstacles_spawned": 6,
+          "birds_spawned": 1
+        },
+        {
+          "seed": 1234003716,
+          "score": 755,
+          "survival_seconds": 12.583333333333334,
+          "distance": 3096.5,
+          "reward": 67.41249999999995,
+          "collision": true,
+          "obstacles_spawned": 6,
+          "birds_spawned": 4
+        },
+        {
+          "seed": 1234003717,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 209,
+          "birds_spawned": 124
+        },
+        {
+          "seed": 1234003718,
+          "score": 598,
+          "survival_seconds": 9.966666666666667,
+          "distance": 2392.0,
+          "reward": 49.799999999999855,
+          "collision": true,
+          "obstacles_spawned": 9,
+          "birds_spawned": 1
+        },
+        {
+          "seed": 1234003719,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 207,
+          "birds_spawned": 129
+        },
+        {
+          "seed": 1234003720,
+          "score": 24000,
+          "survival_seconds": 400.0,
+          "distance": 329590.5,
+          "reward": 8240.25000000009,
+          "collision": false,
+          "obstacles_spawned": 194,
+          "birds_spawned": 142
+        },
+        {
+          "seed": 1234003721,
+          "score": 761,
+          "survival_seconds": 12.683333333333334,
+          "distance": 3123.5,
+          "reward": 68.08749999999995,
+          "collision": true,
+          "obstacles_spawned": 11,
+          "birds_spawned": 1
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "random": {
+      "score_ratio": 46.169801324503304,
+      "survival_ratio": 46.16980132450332,
+      "baseline_score_mean": 188.75,
+      "agent_score_mean": 8714.55
+    },
+    "do_nothing": {
+      "score_ratio": 48.14668508287292,
+      "survival_ratio": 48.146685082872935,
+      "baseline_score_mean": 181.0,
+      "agent_score_mean": 8714.55
+    },
+    "geometric_heuristic": {
+      "score_ratio": 0.7067446302070872,
+      "survival_ratio": 0.7067446302070873,
+      "baseline_score_mean": 12330.55,
+      "agent_score_mean": 8714.55
+    }
+  }
+}

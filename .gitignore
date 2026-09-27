@@ -1,0 +1,67 @@
+# ---------------------------------------------------------------------------
+# Dino Run -- files that should NOT be on GitHub
+# ---------------------------------------------------------------------------
+# Everything below is generated, machine-local or rebuildable.  Things that ARE
+# meant to be committed: the game (main.py, main_half_screen.py, game/, assets/),
+# the RL system (rl/, training/, tests/, reference/), the Colab notebook (colab/),
+# the docs, requirements.txt, the benchmark report and the small trained/verified
+# models under models/ppo_dino_v1 and models/ppo_dino_demo.
+#
+# Note: git does not support trailing comments on a pattern line, so every
+# comment here is on its own line (a trailing "# ..." is treated as part of the
+# pattern and silently stops it from matching).
+
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+develop-eggs/
+.installed.cfg
+
+# --- virtual environments ---------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+
+# --- tooling caches ---------------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter's auto-saved notebook copies
+.ipynb_checkpoints/
+
+# --- built artefacts --------------------------------------------------------
+# output of training/make_bundle.py (the Colab zip + manifest)
+dist/
+
+# output of training/smoke_test.py
+models/smoke/
+
+# scratch directories used by the environment benchmark
+models/benchmark_tmp/
+models/*/tmp/
+
+# --- training side outputs --------------------------------------------------
+tensorboard/
+runs/
+*.tfevents.*
+*.log
+
+# --- agent / editor / OS ----------------------------------------------------
+# Freebuff agent state (project-id is already tracked, so it stays tracked)
+.freebuff/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# --- secrets ----------------------------------------------------------------
+# nothing here should ever hold credentials, but just in case
+.env
+*.pem
