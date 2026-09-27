@@ -10,7 +10,7 @@ pygame.display.set_caption("Dino Run")
 
 # Variables
 bg = []  # List to hold parallax background images
-game_speed = 5  # Speed of the game
+game_speed = 4  # Speed of the game
 last_increment_time = pygame.time.get_ticks()  # Track last increment time
 score = 0  # Initialize score
 high_score = 0  # Initialize high score
@@ -70,8 +70,8 @@ def update_parallax_background():
 def increment_game_speed():
     global game_speed, last_increment_time
     current_time = pygame.time.get_ticks()
-    if current_time - last_increment_time > 7000:  # Increment speed every 7 seconds
-        game_speed += 1
+    if current_time - last_increment_time > 10000:  # Increment speed every 10 seconds
+        game_speed += 0.5
         last_increment_time = current_time
 
 #  ----------------   Score Display/ Main Menu --------------- #
@@ -136,7 +136,7 @@ def reset_level():
     next_target_arrival = 0
     next_entity_is_bird = False
     isAlive = True
-    game_speed = 5  # Reset game speed
+    game_speed = 4  # Reset game speed
     ground_group.empty()  # Clear ground group
     enemy_group.empty()  # Clear enemy group
     obstacle_group.empty()  # Clear obstacle group
@@ -157,7 +157,7 @@ class Ground(pygame.sprite.Sprite):
         self.image = ground_image
         self.rect = self.image.get_rect()
         self.rect.left = x
-        self.rect.y = HEIGHT - 60
+        self.rect.y = HEIGHT - 40
 
     def move(self):
         self.rect.x -= game_speed
@@ -177,7 +177,7 @@ class Player(pygame.sprite.Sprite):
         self.rect.topleft = (50, HEIGHT // 2)
         self.animation_cooldown = 80  # Milliseconds between frame updates
         self.last_update = pygame.time.get_ticks()  # Track last update time
-        self.gravity = 0.5  # Gravity effect
+        self.gravity = 0.8  # Gravity effect
         self.velocity_y = 0  # Vertical velocity for jumping
         self.Inair = False  # Check if player is in the air
         self.ducking = False  # Check if player is ducking
@@ -194,7 +194,7 @@ class Player(pygame.sprite.Sprite):
                 img_path = f"assets/images/dino/{action}/{i}.png"
 
                 img = pygame.image.load(img_path).convert_alpha()
-                img = pygame.transform.scale(img, (img.get_width() * 4, img.get_height() * 4))
+                img = pygame.transform.scale(img, (int(img.get_width() * 2), int(img.get_height() * 2)))
 
                 temp_list.append(img)
             
@@ -225,7 +225,7 @@ class Player(pygame.sprite.Sprite):
         dy, alive = 0, True
         keys = pygame.key.get_pressed()
         if keys[pygame.K_UP] and not self.Inair:
-            self.velocity_y = -15  # Jumping effect
+            self.velocity_y = -14  # Jumping effect
             self.Inair = True
             jump_sound.play()  # Play jump sound
         if keys[pygame.K_DOWN]:
@@ -246,7 +246,7 @@ class Player(pygame.sprite.Sprite):
                 self.rect.bottom = ground.rect.top
                 self.velocity_y = 0
                 self.Inair = False
-                self.gravity = 0.5
+                self.gravity = 0.8
         
         # Check for boxes collision
         for obstacle in obstacle_group:
@@ -277,7 +277,7 @@ class Bird(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.x = WIDTH
-        self.y = random.choice([HEIGHT - 180, HEIGHT - 200, HEIGHT - 120])  # Randomize bird height
+        self.y = random.choice([HEIGHT - 40 - 32, HEIGHT - 40 - 60, HEIGHT - 40 - 80])  # Randomize bird height
         self.animation_list = []
         self.load_animation()
         self.frame_index = 0
@@ -294,7 +294,7 @@ class Bird(pygame.sprite.Sprite):
         for i in range(num_of_frames):  # Fix range (use +1)
             img_path = f"assets/images/bird/{i}_BirdSprite.png"
             img = pygame.image.load(img_path).convert_alpha()
-            img = pygame.transform.scale(img, (img.get_width() * 4, img.get_height() * 4))
+            img = pygame.transform.scale(img, (int(img.get_width() * 2), int(img.get_height() * 2)))
             self.animation_list.append(img)
 
     def update(self):
@@ -315,10 +315,10 @@ class Bird(pygame.sprite.Sprite):
 class Obstacle(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.x, self.y = WIDTH, HEIGHT - 60 
+        self.x, self.y = WIDTH, HEIGHT - 40
         image_name = random.randint(1, 6)  # Randomly select an obstacle image
         self.image = pygame.image.load(f"assets/images/boxes/{image_name}.png").convert_alpha()
-        self.image = pygame.transform.scale(self.image, (self.image.get_width() * 3, self.image.get_height() * 3))
+        self.image = pygame.transform.scale(self.image, (int(self.image.get_width() * 1.5), int(self.image.get_height() * 1.5)))
         self.rect = self.image.get_rect()
         self.rect.bottomleft = (self.x, self.y)
 
@@ -379,10 +379,17 @@ while running:
             obstacle_group.add(obstacle)
 
         # Decide what to spawn next and when
+<<<<<<< HEAD
         gap = 80 + random.randint(0, 70)
         next_entity_is_bird = score > 500 and random.randint(1, 100) <= 30
         if next_entity_is_bird:
             gap += 30 # Birds need more gap because they move faster, give player more time
+=======
+        gap = 40 + random.randint(0, 50)
+        next_entity_is_bird = score > 200 and random.randint(1, 100) <= 40
+        if next_entity_is_bird:
+            gap += 15 # Birds need more gap because they move faster, give player more time
+>>>>>>> origin/fix-spawning-10137846370648699311
 
         next_target_arrival = expected_arrival_tick + gap
     
@@ -400,7 +407,7 @@ while running:
     if not isAlive:
         background_music.stop()
         loose_sound.play()
-        game_speed = 5  # Reset game speed on death
+        game_speed = 4  # Reset game speed on death
         if score > high_score:
             
             save_high_score(score)  
