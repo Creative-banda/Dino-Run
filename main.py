@@ -27,6 +27,9 @@ isAlive = False
 last_bird_spawn_time = pygame.time.get_ticks()
 last_obstacle_spawn_time = pygame.time.get_ticks()
 
+next_target_arrival = 0
+next_entity_is_bird = False
+
 # Font setup
 score_font = pygame.font.Font("assets/font/Retro.ttf", int(25 * ratio_x))
 big_font = pygame.font.Font("assets/font/Retro.ttf", int(30 * ratio_x))
@@ -143,8 +146,10 @@ def main_menu():
 def reset_level():
     global player, ground_1, ground_2
     """Reset the game state to start a new game."""
-    global score, isAlive, game_speed
+    global score, isAlive, game_speed, next_target_arrival, next_entity_is_bird
     score = 0
+    next_target_arrival = 0
+    next_entity_is_bird = False
     isAlive = True
     game_speed = 5 * ratio_x  # Reset game speed
     ground_group.empty()  # Clear ground group
@@ -372,17 +377,29 @@ while running:
     
     draw_scores()  # Draw scores on the screen
 
-    # Create new obstacles
-    if random.randint(1, 150) == 1 and pygame.time.get_ticks() - last_obstacle_spawn_time > 500:  # Adjust frequency of obstacles
-        obstacle = Obstacle()
-        obstacle_group.add(obstacle)
-        last_obstacle_spawn_time = pygame.time.get_ticks()
+    # Spawning logic based on arrival gaps to avoid impossible combinations
 
-    # Create new birds
-    if random.randint(1, 400) == 1 and pygame.time.get_ticks() - last_bird_spawn_time > 2000:  # Adjust frequency of birds
-        bird = Bird()
-        enemy_group.add(bird)
-        last_bird_spawn_time = pygame.time.get_ticks()
+    # Speed of next entity
+    entity_speed = game_speed + (5 * ratio_x if next_entity_is_bird else 0)
+    dist_to_player = WIDTH - (50 * ratio_x)
+    frames_to_arrive = dist_to_player / entity_speed
+    expected_arrival_tick = score + frames_to_arrive
+
+    if expected_arrival_tick >= next_target_arrival:
+        if next_entity_is_bird:
+            bird = Bird()
+            enemy_group.add(bird)
+        else:
+            obstacle = Obstacle()
+            obstacle_group.add(obstacle)
+
+        # Decide what to spawn next and when
+        gap = (80 + random.randint(0, 70)) * ratio_x
+        next_entity_is_bird = score > 500 and random.randint(1, 100) <= 30
+        if next_entity_is_bird:
+            gap += 30 * ratio_x # Birds need more gap because they move faster, give player more time
+
+        next_target_arrival = expected_arrival_tick + gap
 
     # Draw obstacles
     obstacle_group.update()
