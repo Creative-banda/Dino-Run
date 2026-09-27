@@ -395,17 +395,10 @@ while running:
             obstacle_group.add(obstacle)
 
         # Decide what to spawn next and when
-<<<<<<< HEAD
-        gap = (80 + random.randint(0, 70)) * ratio_x
-        next_entity_is_bird = score > 500 and random.randint(1, 100) <= 30
-        if next_entity_is_bird:
-            gap += 30 * ratio_x # Birds need more gap because they move faster, give player more time
-=======
         gap = 40 + random.randint(0, 50)
         next_entity_is_bird = score > 200 and random.randint(1, 100) <= 40
         if next_entity_is_bird:
             gap += 15 # Birds need more gap because they move faster, give player more time
->>>>>>> origin/fix-spawning-10137846370648699311
 
         next_target_arrival = expected_arrival_tick + gap
 
