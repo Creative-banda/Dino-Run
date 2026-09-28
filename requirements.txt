@@ -15,4 +15,5 @@ gymnasium>=1.0.0              # DinoRunEnv / spaces / check_env
 stable-baselines3>=2.3.0      # the PPO implementation (no custom PPO)
 numpy>=1.24                   # observations, vector env buffers
 psutil>=5.9                   # CPU/RAM used by the environment benchmark
+cloudpickle>=2.2              # pickling the environment factories into worker processes
 torch>=2.0                    # policy/value network; CUDA when available, CPU otherwise
