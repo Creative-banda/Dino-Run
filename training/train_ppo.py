@@ -362,7 +362,8 @@ def main(argv=None) -> int:
         # resolves to its most recent checkpoint, not to the best-evaluated one.
         resolved = resolve_model_path(args.resume, prefer="latest")
         print(f"resuming from {resolved}")
-        model = PPO.load(str(resolved), env=vec, device=device, print_system_info=False)
+        load_kwargs = {"tensorboard_log": args.tensorboard_log} if args.tensorboard_log else {}
+        model = PPO.load(str(resolved), env=vec, device=device, print_system_info=False, **load_kwargs)
         model.set_env(vec)
         if args.learning_rate is not None:
             # Continuing a converged policy at its original learning rate often destroys

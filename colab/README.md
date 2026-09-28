@@ -62,18 +62,22 @@ runtime).
 
 ```bash
 N_ENVS=8        # from the benchmark
+SHORT_OUT=/content/drive/MyDrive/dino_run_ppo/ppo_dino_colab_short
 
 python -u training/train_ppo.py --timesteps 300000 --envs $N_ENVS --backend process \
     --seed 42 --device auto --frame-skip 4 --max-episode-steps 6000 \
     --n-steps 512 --batch-size 512 --n-epochs 6 --learning-rate 5e-4 --gamma 0.997 \
     --gae-lambda 0.95 --clip-range 0.2 --ent-coef 0.005 --vf-coef 0.5 --target-kl 0.05 \
     --net-arch 64,64 --eval-every 25000 --eval-episodes 5 --checkpoint-every 100000 \
-    --output /content/dino_run_work/ppo_short
+    --output "$SHORT_OUT"
 
-python -u training/evaluate_ppo.py --model /content/dino_run_work/ppo_short \
+python -u training/evaluate_ppo.py --model "$SHORT_OUT" \
     --episodes 20 --seed 1234 --frame-skip 4 \
-    --json /content/dino_run_work/ppo_short/evaluation.json
+    --json "$SHORT_OUT/evaluation.json"
 ```
+
+The short run also lands on Google Drive, so even this wiring-check run keeps its history;
+delete `ppo_dino_colab_short` in Drive if you do not want it.
 
 `--frame-skip 4` everywhere, so training and evaluation stay comparable with the local
 numbers. The evaluation prints the agent next to the `random`, `do_nothing` and
@@ -87,21 +91,40 @@ Mount Drive first, then train into it:
 from google.colab import drive; drive.mount('/content/drive')
 ```
 
+Everything the run produces is written under `/content/drive/MyDrive/dino_run_ppo/`:
+
+| path | what |
+|---|---|
+| `ppo_dino_colab/` | the long run: `latest.zip`, `best/best_model.zip`, `checkpoints/`, `run_config.json`, `evaluations.npz`, `evaluation*.json` |
+| `ppo_dino_colab/tensorboard/` | SB3 event files, only when `--tensorboard-log` is passed (or `USE_TENSORBOARD = True` in the notebook) |
+| `ppo_dino_colab/session_manifest.jsonl` | one JSON line per training session (start/end, steps before/after, resume source) |
+| `logs/` | per-session console logs, the benchmark report and the smoke-test log |
+
+Nothing is pruned: every periodic checkpoint stays, so the full experiment history survives.
+
 ```bash
 OUT=/content/drive/MyDrive/dino_run_ppo/ppo_dino_colab
+LOGS=/content/drive/MyDrive/dino_run_ppo/logs
 
 python -u training/train_ppo.py --timesteps 10000000 --envs $N_ENVS --backend process \
     --seed 42 --device auto --frame-skip 4 --max-episode-steps 6000 \
     --n-steps 512 --batch-size 512 --n-epochs 6 --learning-rate 5e-4 --gamma 0.997 \
     --gae-lambda 0.95 --clip-range 0.2 --ent-coef 0.005 --vf-coef 0.5 --target-kl 0.05 \
     --net-arch 64,64 --eval-every 250000 --eval-episodes 5 --checkpoint-every 250000 \
-    --output "$OUT"
+    --tensorboard-log "$OUT/tensorboard" \
+    --output "$OUT" 2>&1 | tee "$LOGS/train_manual.log"
 ```
 
-**After a disconnect or a runtime restart**, clone again, install again, **re-run the
-benchmark** (the new runtime may be a different machine), then continue:
+**After a disconnect or a runtime restart**, mount Drive again, clone again, install again,
+**re-run the benchmark** (the new runtime may be a different machine), then inspect what is
+already there and continue:
 
 ```bash
+# how far did the run get?
+python -c "import json; c = json.load(open('$OUT/run_config.json')); print(c.get('trained_timesteps'), 'steps trained')"
+
+tail -n 1 "$OUT/session_manifest.jsonl"   # last session summary
+
 python -u training/train_ppo.py --timesteps <REMAINING> --resume "$OUT/latest.zip" \
     --envs $N_ENVS --backend process --seed 42 --device auto --frame-skip 4 \
     --n-steps 512 --batch-size 512 --n-epochs 6 --gamma 0.997 --gae-lambda 0.95 \

@@ -332,7 +332,8 @@ def test_ppo(timesteps: int, envs: int, device: str, output: Path) -> None:
         if terminated or truncated:
             obs, _ = probe_env.reset()
     probe_env.close()
-    probe_tensor = torch.as_tensor(np.asarray(probe_states), dtype=torch.float32)
+    # the probe tensor must live on the same device as the policy (cpu or cuda)
+    probe_tensor = torch.as_tensor(np.asarray(probe_states), dtype=torch.float32, device=model.policy.device)
 
     def action_probs() -> np.ndarray:
         with torch.no_grad():
